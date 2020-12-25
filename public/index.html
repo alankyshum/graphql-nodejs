@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test GraphQL</title>
+</head>
+<body>
+  <script>
+    const graphQlFetchOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ query: '{ getUsers { username } }' })
+    };
+
+    fetch('/graphql', graphQlFetchOptions)
+      .then(r => r.json())
+      .then(data => console.log('data returned:', data));
+  </script>
+
+  <article>
+    <header><h1>To get started</h1></header>
+    <section>
+      <ul>
+        <li>To play with graph QL: <a href="/graph">Visit /graphql to play with graphIQL</a></li>
+        <li>To check a sample query from client side: Check <code>console.log</code></li>
+      </ul>
+    </section>
+  </article>
+
+  <article>
+    <header><h1>References</h1></header>
+    <section>
+      <dl>
+        <dt>GraphQL on Client Side</dt>
+        <dd>
+          <ul>
+            <li><a href="https://graphql.org/graphql-js/graphql-clients/">GraphQL Official Reference Doc</a></li>
+          </ul>
+
+          <dt>GraphQL on Server Side</dt>
+          <dd>
+            <ul>
+              <li><a href="https://dev.to/thejavascriptninja/the-ultimate-beginner-s-guide-to-graphql-ghe">Dev.to quick example</a></li>
+            </ul>
+          </dd>
+      </dl>
+    </section>
+  </article>
+</body>
+</html>

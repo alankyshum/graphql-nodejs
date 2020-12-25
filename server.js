@@ -1,8 +1,14 @@
+const path = require('path');
 const { gql, ApolloServer } = require('apollo-server-express');
 const express = require('express');
 
 const app = express();
 const WEB_APP_PORT = 8080;
+
+// ! Serve the index.html so we can run graphQL on browser
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // ! So backend has the schema, like PQL, PDSC
 const schema = gql`
